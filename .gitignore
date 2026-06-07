@@ -1,0 +1,39 @@
+# Environment variables (CRITICAL: Never commit this)
+.env
+
+# Python compilation files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+
+# Testing and coverage
+.coverage
+coverage.json
+.pytest_cache/
+htmlcov/
+
+# Database
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Downloaded/Generated Data
+# (We keep sample data, but if you generate huge files, ignore them)
+# data/huge_dataset.csv

@@ -1,0 +1,113 @@
+# Validation rules configuration for sales data.
+# Used by custom validator.py engine.
+
+rules:
+  # Rule 1: null_check on email column
+  - id: RULE_01
+    name: "email_null_check"
+    column: "email"
+    check_type: "null_check"
+    severity: "critical"
+    description: "Check if the email column contains null or empty values"
+
+  # Rule 2: null_check on customer_id column
+  - id: RULE_02
+    name: "customer_id_null_check"
+    column: "customer_id"
+    check_type: "null_check"
+    severity: "critical"
+    description: "Check if the customer_id column contains null or empty values"
+
+  # Rule 3: null_check on revenue column
+  - id: RULE_03
+    name: "revenue_null_check"
+    column: "revenue"
+    check_type: "null_check"
+    severity: "high"
+    description: "Check if the revenue column contains null or empty values"
+
+  # Rule 4: unique_check on customer_id
+  - id: RULE_04
+    name: "customer_id_unique_check"
+    column: "customer_id"
+    check_type: "unique_check"
+    severity: "critical"
+    description: "Check if all customer_id values are unique in the dataset"
+
+  # Rule 5: duplicate_check on customer_id
+  - id: RULE_05
+    name: "customer_id_duplicate_check"
+    column: "customer_id"
+    check_type: "duplicate_check"
+    severity: "high"
+    description: "Identify and track duplicate rows sharing the same customer_id"
+
+  # Rule 6: range_check on revenue
+  - id: RULE_06
+    name: "revenue_range_check"
+    column: "revenue"
+    check_type: "range_check"
+    severity: "high"
+    params:
+      min: 0.0
+      max: 1000000.0
+    description: "Check if revenue is between 0 and 1,000,000"
+
+  # Rule 7: range_check on quantity
+  - id: RULE_07
+    name: "quantity_range_check"
+    column: "quantity"
+    check_type: "range_check"
+    severity: "medium"
+    params:
+      min: 1
+      max: 1000
+    description: "Check if quantity is between 1 and 1,000"
+
+  # Rule 8: regex_check on email
+  - id: RULE_08
+    name: "email_regex_check"
+    column: "email"
+    check_type: "regex_check"
+    severity: "high"
+    params:
+      pattern: "^[\\w.-]+@[\\w.-]+\\.\\w+$"
+    description: "Check if email matches the standard regex pattern"
+
+  # Rule 9: regex_check on phone
+  - id: RULE_09
+    name: "phone_regex_check"
+    column: "phone"
+    check_type: "regex_check"
+    severity: "medium"
+    params:
+      pattern: "^\\+?[\\d\\s\\-\\(\\)]{7,15}$"
+    description: "Check if phone matches the generic phone number pattern"
+
+  # Rule 10: datatype_check: revenue must be float64
+  - id: RULE_10
+    name: "revenue_datatype_check"
+    column: "revenue"
+    check_type: "datatype_check"
+    severity: "medium"
+    params:
+      expected_type: "float64"
+    description: "Ensure the revenue column is stored as float64"
+
+  # Rule 11: date_validation: order_date format YYYY-MM-DD
+  - id: RULE_11
+    name: "order_date_format_check"
+    column: "order_date"
+    check_type: "date_validation"
+    severity: "high"
+    params:
+      format: "%Y-%m-%d"
+    description: "Check if order_date matches the format YYYY-MM-DD"
+
+  # Rule 12: future_date_check: order_date must not be in future
+  - id: RULE_12
+    name: "order_date_future_check"
+    column: "order_date"
+    check_type: "future_date_check"
+    severity: "medium"
+    description: "Check if order_date represents a date in the future relative to execution time"

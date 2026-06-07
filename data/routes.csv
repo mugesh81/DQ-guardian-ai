@@ -1,0 +1,11 @@
+route_id,route_name,start_stop,end_stop,distance_km
+1,Chennai - Vellore,Chennai,Vellore,140
+2,Chennai - Pondicherry,Chennai,Pondicherry,160
+3,Madurai - Rameshwaram,Madurai,Rameshwaram,170
+4,Coimbatore - Ooty,Coimbatore,Ooty,85
+5,Trichy - Thanjavur,Trichy,Thanjavur,60
+6,Tirunelveli - Nagercoil,Tirunelveli,Nagercoil,35
+7,Salem - Erode,Salem,Erode,55
+8,Coimbatore - Pollachi,Coimbatore,Pollachi,40
+9,Chennai - Tirupati,Chennai,Tirupati,150
+10,Madurai - Kodaikanal,Madurai,Kodaikanal,120

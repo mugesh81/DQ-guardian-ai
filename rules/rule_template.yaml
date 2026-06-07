@@ -1,0 +1,108 @@
+# ==========================================
+# DQ GUARDIAN AI - VALIDATION RULE TEMPLATE
+# ==========================================
+# Use this template to configure custom data validation rules.
+# Supported severities: critical, high, medium, low
+# Supported check_types:
+#   null_check, unique_check, duplicate_check, range_check, regex_check,
+#   datatype_check, date_validation, future_date_check, outlier_detection,
+#   row_count, column_existence, negative_value, cross_column_check
+
+rules:
+  # 1. Null Check Example
+  # Verifies that no cell in the target column contains null/NaN or empty string values.
+  - id: TEMPLATE_01
+    name: "column_not_null"
+    column: "your_column_name"
+    check_type: "null_check"
+    severity: "critical"
+    description: "Verifies that the column contains no null values."
+
+  # 2. Unique Check Example
+  # Verifies that there are no duplicate values across the entire column.
+  - id: TEMPLATE_02
+    name: "column_unique"
+    column: "your_column_name"
+    check_type: "unique_check"
+    severity: "high"
+    description: "Verifies that all values in the column are distinct."
+
+  # 3. Duplicate Check Example
+  # Similar to unique check, but tags specific row duplicates rather than asserting general column uniqueness.
+  - id: TEMPLATE_03
+    name: "row_duplicate_check"
+    column: "your_column_name"
+    check_type: "duplicate_check"
+    severity: "high"
+    description: "Identifies duplicate values in this column for specific row tagging."
+
+  # 4. Range Check Example
+  # Verifies that all numeric values in a column fall between the min and max limits (inclusive).
+  - id: TEMPLATE_04
+    name: "numeric_range"
+    column: "your_numeric_column"
+    check_type: "range_check"
+    severity: "medium"
+    params:
+      min: 0.0          # Minimum value (float or int)
+      max: 100.0        # Maximum value (float or int)
+    description: "Ensures values are between min and max parameters."
+
+  # 5. Regex Check Example
+  # Verifies that the string representation matches the regular expression.
+  - id: TEMPLATE_05
+    name: "regex_format"
+    column: "your_string_column"
+    check_type: "regex_check"
+    severity: "medium"
+    params:
+      pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$" # Standard email regex
+    description: "Validates string pattern compliance using regular expressions."
+
+  # 6. Datatype Check Example
+  # Verifies that pandas reads this column as the expected type or that it can be cast without errors.
+  # Supported types: int64, float64, object, bool, datetime64[ns]
+  - id: TEMPLATE_06
+    name: "datatype_compliance"
+    column: "your_column_name"
+    check_type: "datatype_check"
+    severity: "medium"
+    params:
+      expected_type: "float64"
+    description: "Ensures the pandas column data type matches expected type."
+
+  # 7. Date Validation Example
+  # Verifies that date strings can be successfully parsed into timestamps matching a specified datetime format string.
+  - id: TEMPLATE_07
+    name: "date_format_check"
+    column: "your_date_column"
+    check_type: "date_validation"
+    severity: "high"
+    params:
+      format: "%Y-%m-%d" # Standard YYYY-MM-DD format (strptime syntax)
+    description: "Ensures dates match the specified format syntax."
+
+  # 8. Future Date Check Example
+  # Verifies that dates are not newer than the current system timestamp.
+  - id: TEMPLATE_08
+    name: "no_future_dates"
+    column: "your_date_column"
+    check_type: "future_date_check"
+    severity: "medium"
+    description: "Guarantees that order or transaction dates do not lie in the future."
+
+  # 9. Cross-Column Check Example
+  # Compares two columns per row using a configurable operator.
+  # Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==), ne (!=)
+  # Set parse_dates: true when both columns contain date strings.
+  - id: TEMPLATE_09
+    name: "end_after_start_check"
+    column: "end_date"           # left-hand side column (also used in failure reports)
+    check_type: "cross_column_check"
+    severity: "high"
+    params:
+      left_col: "end_date"       # column whose value must be GREATER THAN right_col
+      right_col: "start_date"    # column whose value is on the right of the comparison
+      operator: "gt"             # end_date > start_date
+      parse_dates: true          # coerce both columns to datetime before comparing
+    description: "Ensures end_date is strictly after start_date on every row."

@@ -1,0 +1,17 @@
+rules:
+  - id: RULE_01
+    name: Remove Null Values
+    column: target_column
+    check_type: 'null_check'
+    severity: 'high'
+    params:
+      min: 0
+    description: Remove rows with null values in the target column
+  - id: RULE_02
+    name: Remove Negative Values
+    column: target_column
+    check_type: 'range_check'
+    severity: 'high'
+    params:
+      min: 0
+    description: Remove rows with negative values in the target column
