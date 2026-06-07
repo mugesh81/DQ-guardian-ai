@@ -4,6 +4,13 @@
 
 ---
 
+## 🎥 Project Demo Video
+
+Click the link below to watch the complete project demonstration:
+
+▶️ **Demo Video:**
+https://www.loom.com/share/15a2f562b937474eb558be240b8f70c1
+
 ## Overview
 
 **DQ Guardian AI** is an end-to-end data quality platform that uses a 6-stage agentic loop to automatically detect, diagnose, and suggest fixes for data quality issues in CSV/Parquet datasets. It requires **no external validation frameworks** — the entire validation engine is built from scratch with `pandas` and `numpy`.
