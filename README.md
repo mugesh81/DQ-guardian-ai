@@ -4,7 +4,7 @@
 
 ---
 
-## 🎥 Project Demo Video
+##  Project Demo Video
 
 Click the link below to watch the complete project demonstration:
 
@@ -20,10 +20,41 @@ CSV/Parquet → Observe → Reason → Act → Validate → Learn → Repeat
                  ↑                                           |
                  └───────────────────────────────────────────┘
 ```
-
 ---
 
-## Architecture
+#  System Architecture
+
+DQ Guardian AI follows a layered enterprise architecture consisting of a Streamlit frontend, AI-powered reasoning engine, autonomous agent loop, memory subsystem, and SQLite persistence layer.
+
+<img width="2752" height="1536" alt="Gemini_Generated_Image_dlqi2hdlqi2hdlqi" src="https://github.com/user-attachments/assets/7b76fb9b-5f61-4b5f-934f-00a80952b1e7" />
+
+
+### Core Layers
+
+| Layer | Responsibility |
+|---------|----------------|
+| Browser / User Interface | User interaction through Streamlit |
+| Validation Engine | Executes 13 custom data quality checks |
+| AI Layer | Root cause analysis and AI fix generation |
+| Agent Loop | Observe → Reason → Act → Validate → Learn → Repeat |
+| Support Services | Confidence Engine, Fix Generator, Memory Engine |
+| SQLite Database | Persistent storage and learning memory |
+
+### Architecture Highlights
+
+-  8-Page Streamlit Web Application
+-  13 Built-in Validation Checks
+-  Groq Llama 3.3-70B Powered Analysis
+-  Autonomous 6-Stage Agent Loop
+-  Secure AST-Based Fix Validation
+-  Self-Learning Memory Engine
+-  SQLite Knowledge Repository
+-  FastAPI MCP Server for External Integrations
+
+---
+---
+
+## Project structure 
 
 ```
 dataqualityagent/
@@ -73,16 +104,39 @@ dataqualityagent/
 
 ---
 
-## Agent Loop (6 Stages)
+# Agent Loop
+
+DQ Guardian AI operates using a self-improving 6-stage autonomous reasoning cycle that continuously analyzes, fixes, validates, and learns from data quality issues.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/70d594a8-79d6-4ff0-bda2-9d9746c8ed43" />
+
+
+### 6-Stage Agent Workflow
+
+| Stage | Purpose |
+|---------|----------|
+| 🔍 Observe | Run validation checks and identify failures |
+| 🧠 Reason | Analyze failures and search memory for known solutions |
+| ⚡ Act | Generate AI-powered repair recommendations |
+| ✅ Validate | Test fixes safely in a sandbox environment |
+| 📚 Learn | Store successful patterns and outcomes |
+| 🔄 Repeat | Continue iterations until quality goals are achieved |
+
+### Agent Intelligence Features
+
+- 🔍 Automated Failure Detection
+- 🧠 Memory-Based Decision Making
+- ⚡ AI Root Cause Analysis
+- 🛠️ Pandas & SQL Fix Generation
+- 🔒 Secure Sandbox Validation
+- 📈 Confidence-Based Approval System
+- 📚 Continuous Learning Architecture
+- 🔄 Multi-Iteration Quality Improvement
+
 
 ```
-STAGE 1 — OBSERVE   Load file, load YAML rules, run ValidationEngine
-STAGE 2 — REASON    Sort failures by severity, query memory for known fixes
-STAGE 3 — ACT       Call Groq LLM for root cause + generate fix code
-STAGE 4 — VALIDATE  AST-parse fix, security-scan, confidence score
-STAGE 5 — LEARN     Save results, fixes, success rates to SQLite memory
-STAGE 6 — REPEAT    If success rate < threshold, iterate (max 3 cycles)
-```
+
+The agent automatically repeats the cycle until all critical quality issues are resolved or the maximum iteration limit is reached.
 
 ---
 
@@ -165,16 +219,33 @@ streamlit run app/dashboard/streamlit_app.py --server.port 8501
 
 ---
 
-## Memory (SQLite Schema)
+#  Database Schema
+
+DQ Guardian AI uses SQLite as its persistent memory layer to store validation history, AI-generated fixes, learned repair patterns, and generated validation rules.
+
+<img width="2816" height="1536" alt="Gemini_Generated_Image_a9acupa9acupa9ac" src="https://github.com/user-attachments/assets/39c0059f-8a61-4126-901b-ad98b94237e5" />
+
+
+### Memory (SQLite Schema)
 
 | Table | Purpose |
-|---|---|
+|---------|----------|
 | `validation_runs` | Summary of each validation run |
 | `validation_failures` | Per-check failure records with sample bad rows |
 | `generated_fixes` | Fix proposals with confidence scores |
 | `agent_memory` | Fix attempt history (for REASON stage memory reuse) |
 | `generated_rules` | AI-generated YAML rules from natural language |
 
+### Key Benefits
+
+- 📚 Persistent validation history
+- 🧠 AI learning and memory reuse
+- ⚡ Faster future fix recommendations
+- 📈 Success-rate tracking
+- 🔄 Continuous improvement across runs
+- 🛡️ Audit-ready quality records
+
+---
 ---
 
 ## Testing
