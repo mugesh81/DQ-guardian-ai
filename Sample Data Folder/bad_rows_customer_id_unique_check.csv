@@ -1,0 +1,11 @@
+customer_id,name,email,revenue,quantity,order_date,product_category,region,status,phone
+CUST201,Patricia Williams,patricia.williams100@example.com,1918.81,6,2023-06-01,Sports,South,Pending,555-922-8079
+CUST202,Patricia Johnson,patricia.johnson101@example.com,607.95,14,2023-02-04,Books,South,Shipped,555-735-2693
+CUST203,John Smith,john.smith102@example.com,4871.08,19,2023-07-03,Home,East,Cancelled,555-219-1830
+CUST204,John Martinez,john.martinez103@example.com,109.93,9,2023-10-13,Home,West,Cancelled,555-445-9932
+CUST205,Elizabeth Jones,elizabeth.jones104@example.com,3688.53,12,2023-02-26,Books,East,Pending,555-929-3838
+CUST206,William Jones,william.jones105@example.com,3845.31,11,2023-08-10,Home,West,Pending,555-740-2081
+CUST207,Elizabeth Smith,elizabeth.smith106@example.com,1225.85,14,2023-10-30,Sports,South,Completed,555-850-8805
+CUST208,Jennifer Rodriguez,jennifer.rodriguez107@example.com,3361.08,16,2023-06-12,Clothing,North,Completed,555-587-8404
+CUST209,Robert Smith,robert.smith108@example.com,473.72,1,2023-01-19,Home,South,Pending,555-371-5070
+CUST210,Robert Garcia,robert.garcia109@example.com,1292.67,13,2023-09-21,Home,West,Completed,555-960-9130

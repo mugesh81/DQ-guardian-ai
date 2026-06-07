@@ -1,0 +1,4 @@
+customer_id,email,phone,age,salary,join_date
+1,test1@example.com,1234567890,25,50000,2023-01-01
+2,test2@example.com,0987654321,30,60000,2023-02-15
+3,invalid-email,123,17,-5000,2023-13-40

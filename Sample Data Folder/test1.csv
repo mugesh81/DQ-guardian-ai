@@ -1,0 +1,18 @@
+customer_id,name,email,phone,age,salary,department,join_date
+
+1,John Doe,john@gmail.com,9876543210,25,50000,IT,2024-01-15
+2,Mary Smith,marygmail.com,9876543211,28,60000,HR,2024-02-20
+3,David Lee,david@gmail.com,12345,35,70000,Finance,2024-03-10
+4,Sarah Khan,,9876543213,29,55000,Marketing,2024-04-05
+5,Robert James,robert@gmail.com,9876543214,-5,45000,IT,2024-05-12
+6,Emma Wilson,emma@gmail.com,9876543215,150,65000,Sales,2024-06-18
+7,Chris Brown,chris@gmail.com,9876543216,30,-10000,Finance,2024-07-25
+8,Alice Green,alice@gmail.com,9876543217,27,52000,HR,35-13-2024
+9,Kevin White,kevin@gmail.com,9876543218,31,58000,IT,2024-08-11
+9,Kevin White,kevin@gmail.com,9876543218,31,58000,IT,2024-08-11
+10,Michael King,michael@gmail,9876543219,26,49000,Marketing,2024-09-14
+11,Nancy Clark,nancy@gmail.com,9876543220,,53000,Sales,2024-10-02
+12,Tom Harris,tom@gmail.com,9876543221,24,51000,IT,2024-11-09
+13,Rachel Adams,rachel@gmail.com,abcdefghij,22,47000,HR,2024-12-01
+14,Steve Martin,steve@gmail.com,9876543223,45,99999999,Finance,2024-12-15
+15,Linda Scott,linda@gmail.com,9876543224,19,48000,,2024-12-20
