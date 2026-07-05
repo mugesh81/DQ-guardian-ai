@@ -9,7 +9,7 @@
 Click the link below to watch the complete project demonstration:
 
 ▶️ **Demo Video:**
-https://www.loom.com/share/15a2f562b937474eb558be240b8f70c1
+https://drive.google.com/file/d/1VJMjWWRvzHfdqVT_DLcO4Sq0JM80Bw-S/view?usp=sharing
 
 ## Overview
 
